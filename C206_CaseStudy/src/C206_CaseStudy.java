@@ -107,13 +107,10 @@ public class C206_CaseStudy {
 							if (userOpt == 1) {
 								ViewAllUsers(AccountList);
 							}
-							else if (userOpt == 2) {
-								AddUser(AccountList);
-							}
-							else if (userOpt == 3) {
+							else if (userOpt == 2) { 
 								DeleteUser(AccountList);
 							}
-							else if (userOpt == 4) {
+							else if (userOpt == 3) {
 								System.out.println("Thank you");
 							}
 							else {
@@ -232,9 +229,8 @@ public class C206_CaseStudy {
 		System.out.println("MANAGE USERS");
 		Helper.line(30, "=");
 		System.out.println("1. View All Users");
-		System.out.println("2. Add User");
-		System.out.println("3. Delete User");
-		System.out.println("4. Quit");
+		System.out.println("2. Delete User");
+		System.out.println("3. Quit");
 	}
 	
 	public static void ViewAllUsers(ArrayList<Account> AccountList) {
