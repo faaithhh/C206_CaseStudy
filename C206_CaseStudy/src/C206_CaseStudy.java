@@ -275,8 +275,6 @@ public class C206_CaseStudy {
 		
 	}
 
-
-	
 	
 	public static void ShowAllBid(ArrayList<bidInfo> BidList) {
 		
