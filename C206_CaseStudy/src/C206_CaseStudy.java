@@ -353,7 +353,7 @@ public class C206_CaseStudy {
 		for (int i = 0; i < DealList.size(); i++) {
 			if (RemoveDeal == DealList.get(i).getDealId()) {
 				DealList.remove(i);
-				System.out.println("Deal successfully remove!");
+				System.out.println("Deal successfully remove");
 			} else {
 				System.out.println("Deal ID does not exist");
 			}

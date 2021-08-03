@@ -7,7 +7,7 @@ public class DealInfo {
 	private String buyerEmail;
 	private double TranscationPrice;
 	private LocalDate endingDate;
-	
+
 	
 	
 	
