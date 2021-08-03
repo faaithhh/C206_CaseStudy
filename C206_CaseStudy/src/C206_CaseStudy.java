@@ -10,13 +10,13 @@ public class C206_CaseStudy {
 		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 		ArrayList<bidInfo> BidList = new ArrayList<bidInfo>();
+
+		BidList.add(new bidInfo(1, "Used Shoe", "abc@gmail.com", "cadmusChau@gamil.com", 4.50
+				));
+
+		BidList.add(new bidInfo(2, "Used socks", "sccc@gmail.com", "DogeKing@gamil.com", 4.50));
+		
 		ArrayList<DealInfo> DealList = new ArrayList<DealInfo>();
-
-		BidList.add(new bidInfo(1, "Used Condom", "abc@gmail.com", "cadmusChau@gamil.com", 4.50,
-				LocalDate.parse("10/10/2020", formatter1), LocalDate.parse("17/10/2020", formatter1)));
-
-		BidList.add(new bidInfo(2, "Used socks", "sccc@gmail.com", "DogeKing@gamil.com", 4.50,
-				LocalDate.parse("11/10/2020", formatter1), LocalDate.parse("18/10/2020", formatter1)));
 
 		DealList.add(new DealInfo(1, "Used Condom", "abc@gmail.com", "cadmusChau@gamil.com", 4.50,
 				LocalDate.parse("17/10/2020", formatter1)));
@@ -60,7 +60,7 @@ public class C206_CaseStudy {
 						System.out.println("Either your email or password is invalid");
 					} else {
 						int option2 = 0;
-						while (option2 != 6) {
+						while (option2 != 8) {
 							StudentMenu();
 							option2 = Helper.readInt("Enter an option > ");
 							if (option2 == 1) {
@@ -73,11 +73,18 @@ public class C206_CaseStudy {
 								ShowAllBid(BidList);
 								AddBid(BidList);
 							} else if (option2 == 5) {
+								ShowAllBid(BidList);
+							} else if (option2 == 6) {
+								ShowAllDeal(DealList);
+							} 
+							else if(option2 == 7) {
 								ShowAllDeal(DealList);
 								AddDeal(DealList);
-							} else if (option2 == 6) {
+							}
+							else if (option2 == 8) {
 								System.out.println("Quit.");
-							} else {
+							}
+							else {
 								System.out.println("You have enterd an invalid option");
 							}
 						}
@@ -173,6 +180,12 @@ public class C206_CaseStudy {
 					System.out.println("Thank you for using the application");
 				}
 			}
+			else if(optMain == 3){
+				System.out.println("Quit.");
+			}
+			else {
+				System.out.println("You have enter an invalid option");
+			}
 		}
 	}
 
@@ -202,7 +215,9 @@ public class C206_CaseStudy {
 		System.out.println("3. View all item");
 		System.out.println("4. Add Bids");
 		System.out.println("5. View all bids");
-		System.out.println("6. Quit");
+		System.out.println("6. View all deal");
+		System.out.println("7. Add Deal");
+		System.out.println("8. Quit");
 	}
 
 	public static void AdminMenu() {
@@ -286,12 +301,12 @@ public class C206_CaseStudy {
 	public static void ShowAllBid(ArrayList<bidInfo> BidList) {
 
 		String output = "";
-		output += String.format("%-40s %-39s %-20s %30s %40s %30s %25s\n", "Bid ID", "Item Name", "Description",
+		output += String.format("%-40s %-39s %-20s %30s %40s \n", "Bid ID", "Item Name", "Description",
 				"Seller Email", "Current Bid Price($)", "Starting Date", "Ending Date");
 		for (int x = 0; x < BidList.size(); x++) {
-			output += String.format("%-40s %-39s %-20s %30s %40s %30s %25s\n", BidList.get(x).getBidId(),
+			output += String.format("%-40s %-39s %-20s %30s %40s \n", BidList.get(x).getBidId(),
 					BidList.get(x).getName(), BidList.get(x).getSellerEmail(), BidList.get(x).getBuyerEmail(),
-					BidList.get(x).getBidPrice(), BidList.get(x).getStartDate(), BidList.get(x).getEndDate());
+					BidList.get(x).getBidPrice());
 		}
 
 		System.out.println(output);
@@ -312,25 +327,45 @@ public class C206_CaseStudy {
 	}
 
 	public static void AddBid(ArrayList<bidInfo> BidList) {
-		System.out.println("");
-		System.out.println("ADD A BID");
-		String BuyerEmail = Helper.readString("Enter your email > ");
-		double newBidPrice = Helper.readDouble("Enter Your Bid Price >");
-		int bidId = Helper.readInt("Enter the bid ID of the item you want to bid > ");
-		for (int i = 0; i < BidList.size(); i++) {
-			if (bidId == BidList.get(i).getBidId()) {
-				if (newBidPrice > BidList.get(i).getBidPrice()) {
-					System.out.println("You have successfully Bid the item");
-					BidList.get(i).setBuyerEmail(BuyerEmail);
-					BidList.get(i).setNewBidPrice(newBidPrice);
-				} else {
-					System.out.println("Your bid id is lesser than the current bid value");
-				}
-			} else {
-				System.out.println("Bid ID deos not exist");
-			}
-		}
-
+		System.out.println("ADD BID");
+	    Helper.line(30, "=");
+	    int NewID = BidList.size() + 1;
+	    String itemName = Helper.readString("Enter item name >");
+	    String sellerEmail = Helper.readString("Enter Seller email > ");
+	    String buyerEmail = Helper.readString("Enter buyer email > ");
+	    double bidPrice = Helper.readDouble("Enter Bid price > ");
+	    if(itemName.equals("") || sellerEmail.equals("") || bidPrice == 0) {
+	      System.out.println("You did not enter all the details.");
+	    }
+	    else {
+	      System.out.println("Item successfully added!");
+	      BidList.add(new bidInfo(NewID, itemName, sellerEmail, buyerEmail, bidPrice));      
+	    }	  
+	  }
+	public static void UpdateBid(ArrayList<bidInfo> BidList) {
+		boolean isAvailable = false;
+	    System.out.println("");
+	    System.out.println("ADD A BID");
+	    System.out.println("=");
+	    int bidId = Helper.readInt("Enter the bid ID of the item you want to bid > ");  
+	    for(int i =0; i < BidList.size(); i++) {
+	      if(bidId == BidList.get(i).getBidId()) {
+	        isAvailable = true;
+	        String BuyerEmail = Helper.readString("Enter your email > ");
+	        double newBidPrice = Helper.readDouble("Enter Your Bid Price > $");
+	        if(BidList.get(i).getBidPrice() < newBidPrice) {
+	          System.out.println("You have successfully bid the item!");
+	          BidList.get(i).setBuyerEmail(BuyerEmail);
+	          BidList.get(i).setNewBidPrice(newBidPrice);
+	        }
+	        else {
+	          System.out.println("Your bid price is lower than current bid price");
+	        }      
+	      }
+	    }  
+	    if(isAvailable == false) {
+	      System.out.println("Bid id does not exist");
+	    }
 	}
 
 	public static void ShowAllDeal(ArrayList<DealInfo> DealList) {
@@ -339,7 +374,7 @@ public class C206_CaseStudy {
 		output += String.format("%-40s %-39s %-20s %30s %40s %25s\n", "Deal ID", "Item Name", "Description",
 				"Seller Email", "Transaction price($)", "Ending Date");
 		for (int x = 0; x < DealList.size(); x++) {
-			output += String.format("%-40s %-39s %-20s %30s %40s %30s %25s\n", DealList.get(x).getDealId(),
+			output += String.format("%-40s %-39s %-20s %30s %40s %25s\n", DealList.get(x).getDealId(),
 					DealList.get(x).getName(), DealList.get(x).getSellerEmail(), DealList.get(x).getBuyerEmail(),
 					DealList.get(x).getTranscationPrice(), DealList.get(x).getEndDate());
 		}
