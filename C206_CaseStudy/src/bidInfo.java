@@ -1,3 +1,5 @@
+//Wei Jing abc
+
 
 public class bidInfo {
 	private int bid_id;

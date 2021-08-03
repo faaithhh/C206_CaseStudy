@@ -190,6 +190,7 @@ public class C206_CaseStudy {
 	}
 
 	public static void mainMenu() {
+		//Done by WeiJing
 		Helper.line(30, "=");
 		System.out.println("CAMPUS ONLINE AUCTION SHOP");
 		Helper.line(30, "=");
@@ -199,6 +200,7 @@ public class C206_CaseStudy {
 	}
 
 	public static void loginMenu() {
+		//Done by WeiJing
 		Helper.line(30, "=");
 		System.out.println("LOGIN PAGE");
 		Helper.line(30, "=");
@@ -207,6 +209,7 @@ public class C206_CaseStudy {
 	}
 
 	public static void StudentMenu() {
+		//Done by WeiJing
 		Helper.line(30, "=");
 		System.out.println("Student Menu");
 		Helper.line(30, "=");
@@ -221,6 +224,7 @@ public class C206_CaseStudy {
 	}
 
 	public static void AdminMenu() {
+		//Done by Wei Jing
 		Helper.line(30, "=");
 		System.out.println("Admin Menu");
 		Helper.line(30, "=");
@@ -233,6 +237,7 @@ public class C206_CaseStudy {
 	}
 
 	public static void BidMenu() {
+		//Done by Wei Jing
 		Helper.line(30, "=");
 		System.out.println("MANAGE BID");
 		Helper.line(30, "=");
@@ -299,7 +304,7 @@ public class C206_CaseStudy {
 	}
 
 	public static void ShowAllBid(ArrayList<bidInfo> BidList) {
-
+		//Done by Wei Jing
 		String output = "";
 		output += String.format("%-40s %-39s %-20s %30s %40s \n", "Bid ID", "Item Name", "Description",
 				"Seller Email", "Current Bid Price($)", "Starting Date", "Ending Date");
@@ -313,6 +318,7 @@ public class C206_CaseStudy {
 	}
 
 	public static void DeleteBid(ArrayList<bidInfo> BidList) {
+		// Done by Wei Jing
 		System.out.println("");
 		int RemoveBid = Helper.readInt("Enter the bid id of the bid you want to delete > ");
 		for (int i = 0; i < BidList.size(); i++) {
@@ -323,10 +329,10 @@ public class C206_CaseStudy {
 				System.out.println("Bid ID does not exist");
 			}
 		}
-
 	}
 
 	public static void AddBid(ArrayList<bidInfo> BidList) {
+		// Done by Wei Jing
 		System.out.println("ADD BID");
 	    Helper.line(30, "=");
 	    int NewID = BidList.size() + 1;
@@ -343,6 +349,7 @@ public class C206_CaseStudy {
 	    }	  
 	  }
 	public static void UpdateBid(ArrayList<bidInfo> BidList) {
+		//Done by Wei Jing
 		boolean isAvailable = false;
 	    System.out.println("");
 	    System.out.println("ADD A BID");
@@ -414,5 +421,17 @@ public class C206_CaseStudy {
 			}
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 
 }

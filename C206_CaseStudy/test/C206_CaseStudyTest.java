@@ -32,6 +32,7 @@ public class C206_CaseStudyTest {
   }
   @Test
   public void ShowAllBidTest() {
+	 // Done by WeiJing
     // Test if Item list is not null but empty, so that can add a new item
     assertNotNull("Test if there is valid Bid arraylist to add to", BidList);
     
@@ -41,6 +42,7 @@ public class C206_CaseStudyTest {
   }
   @Test
   public void DeleteBidTest() {
+	  //Done by WeiJing
     // Test if Item list is not null but empty, so that can add a new item
     assertNotNull("Test if there is valid Bid arraylist to add to", BidList);
     
@@ -53,6 +55,7 @@ public class C206_CaseStudyTest {
   }
   @Test
   public void testAddBid() {
+	  //Done by WeiJing
     // Test if Item list is not null but empty, so that can add a new item
     assertNotNull("Test if there is valid Bid arraylist to add to", BidList);
     BidList.add(bid1);
