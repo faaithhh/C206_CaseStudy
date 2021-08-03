@@ -10,7 +10,6 @@ public class DealInfo {
 
 	
 	
-	
 	public DealInfo(int Deal_id, String name,String sellerEmail, String buyerEmail, double  TranscationPrice, 
 			 LocalDate endingDate) {
 		

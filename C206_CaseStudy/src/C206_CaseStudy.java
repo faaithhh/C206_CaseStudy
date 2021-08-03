@@ -377,7 +377,6 @@ public class C206_CaseStudy {
 			else {
 				System.out.println("Deal ID deos not exist");
 			}
-
 		}
 
 	}
