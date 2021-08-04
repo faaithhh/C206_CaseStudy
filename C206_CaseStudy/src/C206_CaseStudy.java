@@ -34,6 +34,12 @@ public class C206_CaseStudy {
 		CategoryList.add(new Category("Clothes"));
 		CategoryList.add(new Category("Electronics"));
 		CategoryList.add(new Category("Kitchen Appliances"));
+		
+		// Iffah
+		ArrayList<Item> itemList = new ArrayList<Item>();
+		itemList.add(new Item("Jacket","Used 1 time only. size: M ", 10, LocalDate.parse("19/10/2020", formatter1),LocalDate.parse("30/10/2020", formatter1), 1));
+	    itemList.add(new Item ("Sweater","Bought the wrong size. size: S",10, LocalDate.parse("15/10/2020", formatter1),LocalDate.parse("20/10/2020", formatter1),1));
+
 
 		int optMain = 0;
 		int option = 0;
@@ -143,8 +149,23 @@ public class C206_CaseStudy {
 								} else {
 									System.out.println("Quit");
 								}
-
+								
 							} else if (option3 == 3) { // Iffah
+					                itemMenu();
+					                int opt = Helper.readInt("Enter an option >");
+					                
+					                if (opt == 1) {
+					                  addItem(itemList);
+					                }
+					                else if (opt == 2) {
+					                  viewAllItem(itemList);
+					                }
+					                else if (opt == 3) {
+					                  deleteItem(itemList);
+					                }
+					                else {
+					                  System.out.println("You have entered an invalid option!");
+					                }
 
 							} else if (option3 == 4) { // Wei Jing
 								int bidOption = 0;
@@ -298,6 +319,17 @@ public class C206_CaseStudy {
 		System.out.println("3. Delete Category");
 		System.out.println("4. Quit");
 	}
+	
+	//Iffah
+	public static void itemMenu() {
+	    Helper.line(30, "=");
+	    System.out.println("MANAGE ITEM");
+	    Helper.line(30, "=");
+	    System.out.println("1. Add item");
+	    System.out.println("2. View all items");
+	    System.out.println("3. Delete Item name");
+	    
+	  }
 
 	// Cindy Ella
 	public static void ViewAllUsers(ArrayList<Account> AccountList) {
@@ -408,6 +440,54 @@ public class C206_CaseStudy {
 		}
 
 	}
+	
+	// Iffah
+	  public static void addItem(ArrayList<Item> itemList) {
+	    System.out.println("");
+	    System.out.println("ADD ITEM");
+	    String name = Helper.readString("Enter name of Item >");
+	    String desc = Helper.readString("Description if Item >");
+	    double minBid = Helper.readDouble("Start of bid price >");
+	    String startDate = Helper.readString("Start Date of Bid (DD/MM/YYYY) >");
+	    String endDate = Helper.readString("End Date of Bid (DD/MM/YYYY) >");
+	    int bidInc = Helper.readInt("How much to increment bid >");
+	    
+	    DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	    
+	    LocalDate ldstart = LocalDate.parse(startDate, formatter1);
+	    LocalDate ldend = LocalDate.parse(endDate, formatter1);
+	    
+	    itemList.add(new Item(name, desc, minBid, ldstart,ldend, bidInc));
+	    System.out.println("Item Added!");
+	  }
+	  
+	  // Iffah
+	  public static void viewAllItem(ArrayList<Item>itemList) {
+	    System.out.println("");
+	    System.out.println("VIEW ALL ITEM");
+	    String output = "";
+	    
+	    output = String.format("%-40s %-40s %-20s %-20s %-20s %20s\n", "Item Name", "Description","Minimum bid price","Start Date", "End Date","Bid Increment");
+	    
+	    for (Item i : itemList) {
+	      output += String.format("%-40s %-40s %-20.2f %-20s %-20s %-20s\n", i.getItemName(),i.getDesc(),i.getMinPrice(),i.getStartDate(),i.getEndDate(),i.getBidIncrement());
+	    }
+	    System.out.println(output);
+	  }
+	  
+	  // Iffah
+	  public static void deleteItem(ArrayList<Item> itemList) {
+	    System.out.println("");
+	    System.out.println("DELETE ITEM");
+	    String delete = Helper.readString("Enter the name item >");
+	    
+	    for (int i = 0; i < itemList.size();i++) {
+	      if (delete.equals(itemList.get(i).getItemName())) {
+	        itemList.remove(i);
+	        System.out.println("Item Deleted successfully!");
+	      }
+	    }
+	  }
 
 	// Wei Jing
 	public static void ShowAllBid(ArrayList<bidInfo> BidList) {

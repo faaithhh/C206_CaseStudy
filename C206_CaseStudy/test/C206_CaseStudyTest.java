@@ -140,32 +140,33 @@ public class C206_CaseStudyTest {
 	  @Test
 	  public void AddUserTest() {
 	    // Test if Item list is not null but empty, so that can add a new item
-	    assertNotNull("Test if there is valid deal arraylist to add to", DealList);
+	    assertNotNull("Test if there is valid Account arraylist to add to", AccountList);
 	    
 	    // adds and check for arraylist size
 	    AccountList.add(account1);
-	    assertEquals("Test if that deal arraylist size is 1?", 2, AccountList.size()); 
+	    AccountList.add(account2);
+	    assertEquals("Test if that deal arraylist size is 2?", 2, AccountList.size()); 
 	    
 	    AccountList.add(account2);
-	    assertEquals("Test if that deal arraylist size is 2?", 3, AccountList.size()); 
+	    assertEquals("Test if that deal arraylist size is 3?", 3, AccountList.size()); 
 	  }
 	  
 	  @Test
 	  public void DeleteUserTest() {
 	    // Test if User list is not null but empty, so that can add a new item
-	    assertNotNull("Test if there is valid deal arraylist to add to", DealList);
+	    assertNotNull("Test if there is valid Account arraylist to add to", AccountList);
 	    
 	    // adds and check for arraylist size
 	    AccountList.add(account1);
 	    AccountList.add(account2);
 	    AccountList.add(account3);
 	    AccountList.add(account4);
-	    assertEquals("Test if that deal arraylist size is 4?", 4, DealList.size());
+	    assertEquals("Test if that deal arraylist size is 4?", 4, AccountList.size());
 	    
 	    // deletes and check if it was removed from arraylist
 	    AccountList.remove(0);
 	    AccountList.remove(1);
-	    assertEquals("Test if that deal arraylist size is 2?", 2, DealList.size());    
+	    assertEquals("Test if that deal arraylist size is 2?", 2, AccountList.size());    
 	  }
 	  
 	  
