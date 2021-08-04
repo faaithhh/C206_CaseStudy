@@ -19,6 +19,10 @@ public class C206_CaseStudyTest {
   private Account account4;
   private Account account5;
   private ArrayList<Account> AccountList;
+  private Category category1;
+  private Category category2;
+  private Category category3;
+  private ArrayList<Category> CategoryList;
   
   public C206_CaseStudyTest() {
       super();
@@ -48,7 +52,15 @@ public class C206_CaseStudyTest {
 
     AccountList = new ArrayList<Account>();
     
+    CategoryList = new ArrayList<Category>();
+    
+    category1 = new Category("Clothes");
+    category2 = new Category("Electronics");
+    category3 = new Category("Kitchen Appliances");
+     
   }
+    
+  
 
   
   @Test
@@ -169,6 +181,46 @@ public class C206_CaseStudyTest {
 	    assertEquals("Test if that deal arraylist size is 2?", 2, AccountList.size());    
 	  }
 	  
+	  @Test
+	   public void testAddCategory() {
+	    //Done by Faith
+	     // Test if Category list is not null but empty, so that can add a new category
+	     assertNotNull("Test if there is valid Category arraylist to add to", CategoryList);
+	     CategoryList.add(category1);
+	     assertEquals("Test if that Category arraylist size is 1?", 1, CategoryList.size());
+	     CategoryList.add(category2);
+	     assertEquals("Test if that Category arraylist size is 2?", 2, CategoryList.size());
+	     CategoryList.add(category3);
+	     assertEquals("Test if that Category arraylist size is 3?", 3, CategoryList.size());
+	   }
+	     
+	   @Test
+	   public void ViewAllCategoryTest() {
+	    // Done by Faith
+	      // Test if Category list is not null but empty, so that can add a new category
+	      assertNotNull("Test if there is valid category arraylist to add to", CategoryList);
+	       
+	      CategoryList.add(category1);
+	      CategoryList.add(category2);
+	      CategoryList.add(category3);
+	      assertEquals("Test if that category arraylist size is 3?", 3, CategoryList.size());
+	    }
+	 
+	   @Test
+	   public void DeleteCategoryTest() {
+	    //Done by Faith
+	     // Test if Category list is not null but empty, so that can add a new item
+	     assertNotNull("Test if there is valid Category arraylist to add to", CategoryList);
+	      
+	     CategoryList.add(category1);
+	     CategoryList.add(category2);
+	     CategoryList.add(category3);
+	     assertEquals("Test if that Category arraylist size is 3?", 3, CategoryList.size());
+	      
+	     CategoryList.remove(0);
+	     assertEquals("Test if that Category arraylist size is 2?", 2, CategoryList.size());
+	   }
+	  
 	  
   
   @After
@@ -184,6 +236,10 @@ public class C206_CaseStudyTest {
     account3 = null;
     account4 = null;
     account5 = null;
+    category1 = null;
+    category2 = null;
+    category3 = null;
+    CategoryList = null;
   }
   
     
