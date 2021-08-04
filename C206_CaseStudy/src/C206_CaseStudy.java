@@ -9,6 +9,7 @@ public class C206_CaseStudy {
 		
 		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
+		
 		ArrayList<bidInfo> BidList = new ArrayList<bidInfo>();
 		
 		BidList.add(new bidInfo(1, "Used Condom", "abc@gmail.com", "cadmusChau@gamil.com", 
