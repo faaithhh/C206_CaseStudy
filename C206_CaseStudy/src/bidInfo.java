@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 
+
+// Wei Jing
 public class bidInfo {
 	private int bid_id;
 	private String name;
