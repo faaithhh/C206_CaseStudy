@@ -316,8 +316,14 @@ public class C206_CaseStudy {
 		String newEmail = Helper.readString("Enter Email > ");
 		String newPassword = Helper.readString("Enter password > ");
 
-		AccountList.add(new Account(newName, newRole, newEmail, newPassword));
-		System.out.println("You have sucessfully registered");
+		for (Account a : AccountList) {
+			if(newName != a.getName() && newEmail != a.getEmail()) {
+				AccountList.add(new Account(newName, newRole, newEmail, newPassword));
+				System.out.println("You have sucessfully registered");
+			}
+			else 
+				System.out.println("Error! User already exist!");
+		}
 
 	}
 
