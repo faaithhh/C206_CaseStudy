@@ -11,20 +11,23 @@ public class C206_CaseStudy {
 
 		// Wei Jing
 		ArrayList<bidInfo> BidList = new ArrayList<bidInfo>();
-		BidList.add(new bidInfo(1, "Used Shoe", "abc@gmail.com", "cadmusChau@gamil.com", 4.50));
-		BidList.add(new bidInfo(2, "Used socks", "sccc@gmail.com", "DogeKing@gamil.com", 4.50));
+		BidList.add(new bidInfo(1, "Used Shoe", "daisy.lim@gmail.com", "fiona.goh@gmail.com", 4.50));
+		BidList.add(new bidInfo(2, "Used Iphone 7", "sally.lim@gmail.com", "grace.ng@gmail.com", 4.50));
 
 		// Jarel
 		ArrayList<DealInfo> DealList = new ArrayList<DealInfo>();
-		DealList.add(new DealInfo(1, "Used Shoe", "abc@gmail.com", "cadmusChau@gamil.com", 4.50,
+		DealList.add(new DealInfo(1, "Used Shoe", "sally.lim@gmail.com", "grace.ng@gmail.com", 4.50,
 				LocalDate.parse("17/10/2020", formatter1)));
-		DealList.add(new DealInfo(2, "Used socks", "sccc@gmail.com", "DogeKing@gamil.com", 4.50,
+		DealList.add(new DealInfo(2, "Used Iphone 7", "daisy.lim@gmail.com", "fiona.goh@gmail.com", 4.50,
 				LocalDate.parse("18/10/2020", formatter1)));
 
 		// Cindy Ella
 		ArrayList<Account> AccountList = new ArrayList<Account>();
-		AccountList.add(new Account("Tan ah beng", "admin", "abc123@gmail.com", "123455"));
-		AccountList.add(new Account("Your mum", "student", "abcd1222@gmail.com", "999990"));
+		AccountList.add(new Account("James Tan", "admin", "james.tan@gmail.com", "abc456"));
+		AccountList.add(new Account("Daisy Lim", "student", "daisy.lim@gmail.com", "909090"));
+		AccountList.add(new Account("Grace Ng", "student", "grace.ng@gmail.com", "098765"));
+		AccountList.add(new Account("Sally Lim", "student", "sally.lim@gmail.com", "012345"));
+		AccountList.add(new Account("Fiona Goh", "student", "fiona.goh@gmail.com", "123abc"));
 
 		// Faith
 		ArrayList<Category> CategoryList = new ArrayList<Category>();
