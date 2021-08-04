@@ -77,11 +77,11 @@ public class C206_CaseStudy {
 							option2 = Helper.readInt("Enter an option > ");
 							if (option2 == 1) {
 
-							} else if (option2 == 2) {
-								// Faith
+							} else if (option2 == 2) {// Faith
 								ViewAllCategories(CategoryList);
 
 							} else if (option2 == 3) {
+								viewAllItem(itemList); // Iffah
 
 							} else if (option2 == 4) { // Wei Jing
 								ShowAllBid(BidList);
@@ -95,6 +95,7 @@ public class C206_CaseStudy {
 							} else if (option2 == 7) { // Jarel
 								ShowAllDeal(DealList);
 								AddDeal(DealList);
+								
 							} else if (option2 == 8) {
 								System.out.println("Quit.");
 							} else {
