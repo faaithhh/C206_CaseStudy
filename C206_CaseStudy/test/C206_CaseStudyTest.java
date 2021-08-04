@@ -10,19 +10,26 @@ public class C206_CaseStudyTest {
   private bidInfo bid1;
   private bidInfo bid2;
   private ArrayList <bidInfo> BidList;
+ 
   private DealInfo deal1;
   private DealInfo deal2;
   private ArrayList <DealInfo> DealList;
+  
   private Account account1;
   private Account account2;
   private Account account3;
   private Account account4;
   private Account account5;
   private ArrayList<Account> AccountList;
+ 
   private Category category1;
   private Category category2;
   private Category category3;
   private ArrayList<Category> CategoryList;
+  
+  private ArrayList<Item> itemList;
+  private Item item1;
+  private Item item2;
   
   public C206_CaseStudyTest() {
       super();
@@ -57,17 +64,15 @@ public class C206_CaseStudyTest {
     category1 = new Category("Clothes");
     category2 = new Category("Electronics");
     category3 = new Category("Kitchen Appliances");
+    
+    item1 = new Item("Jacket","Used 1 time only. size: M ", 10, LocalDate.parse("19/10/2020", formatter1),LocalDate.parse("30/10/2020", formatter1), 1);
+    item2 = new Item ("Sweater","Bought the wrong size. size: S",10, LocalDate.parse("15/10/2020", formatter1),LocalDate.parse("20/10/2020", formatter1),1);
+    itemList = new ArrayList<Item>();
      
   }
     
   
 
-  
-  @Test
-  public void c206_test() {
-    //fail("Not yet implemented"); 
-    assertTrue("C206_CaseStudy_SampleTest ",true);
-  }
   @Test
   public void ShowAllBidTest() {
 	 // Done by WeiJing
@@ -220,6 +225,39 @@ public class C206_CaseStudyTest {
 	     CategoryList.remove(0);
 	     assertEquals("Test if that Category arraylist size is 2?", 2, CategoryList.size());
 	   }
+	   
+	   @Test
+	   public void c206_test() {
+	     //fail("Not yet implemented");
+	     assertTrue("C206_CaseStudy_SampleTest ",true);
+	     
+	   }
+	   
+	   public void addItemTest() {
+	     assertNotNull("Test if the is valid Item arrayList to add to, itemList");
+	     itemList.add(item1);
+	     assertEquals("Test if that Item arrayList size is 1?" , 1, itemList.size());
+	     itemList.add(item2);
+	     assertEquals("Test if that Item arrayLst size is 2", 2, itemList.size());
+	   }
+	   
+	   public void viewAllItemTest() {
+	     assertNotNull("Test if there is valid Item arrayList to add to", itemList);
+	     itemList.add(item1);
+	     itemList.add(item2);
+	     assertEquals("Test if that Item arrayList size is 2?", 2, itemList.size());
+	   }
+	   
+	   public void deleteItemTest() {
+	     assertNotNull("Test if there is valid Item arrayList to add to", itemList);
+	     
+	     itemList.add(item1);
+	     itemList.add(item2);
+	     assertEquals("Test if that Item arrayList size is 2?", 2, itemList.size());
+	     
+	     itemList.remove(0);
+	     assertEquals("Test if that Item arrayList size is 1", 1, itemList.size());
+	   }
 	  
 	  
   
@@ -240,6 +278,9 @@ public class C206_CaseStudyTest {
     category2 = null;
     category3 = null;
     CategoryList = null;
+    item1 = null;
+    item2 = null;
+    itemList = null;
   }
   
     

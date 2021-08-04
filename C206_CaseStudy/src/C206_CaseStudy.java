@@ -340,8 +340,8 @@ public class C206_CaseStudy {
 		output += String.format("%-30s %-20s %-20s %20s\n", "User Name", "Role", "Email", "Password");
 		
 		for (int a = 0; a < AccountList.size(); a++) {
-			output += String.format("%-30s %-20s %-20s %20s\n", AccountList.get(a).getName(),  AccountList.get(a).getRole(),  AccountList.get(a).getEmail(),
-					 AccountList.get(a).getPassword());
+			output += String.format("%-30s %-20s %-20s %20s\n", AccountList.get(a).getName(),  
+		AccountList.get(a).getRole(),  AccountList.get(a).getEmail(), AccountList.get(a).getPassword());
 		}
 		System.out.println(output);
 	}
