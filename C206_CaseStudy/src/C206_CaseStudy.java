@@ -24,7 +24,7 @@ public class C206_CaseStudy {
 		// Cindy Ella
 		ArrayList<Account> AccountList = new ArrayList<Account>();
 		AccountList.add(new Account("Tan ah beng", "admin", "abc123@gmail.com", "123455"));
-		AccountList.add(new Account("Your mum", "student", "abcd1222@gmail.com", "99999"));
+		AccountList.add(new Account("Your mum", "student", "abcd1222@gmail.com", "999990"));
 
 		// Faith
 		ArrayList<Category> CategoryList = new ArrayList<Category>();
@@ -197,7 +197,9 @@ public class C206_CaseStudy {
 					System.out.println("Thank you for using the application");
 				}
 			} else if (optMain == 3) { // Wei Jing
-				System.out.println("Quit.");
+				System.out.println("Thank you for using the application!");
+				break;
+			
 			} else { // Wei Jing
 				System.out.println("You have enter an invalid option");
 			}
@@ -296,19 +298,24 @@ public class C206_CaseStudy {
 
 	// Cindy Ella
 	public static void ViewAllUsers(ArrayList<Account> AccountList) {
-		System.out.println("");
+		Helper.line(30, "=");
 		System.out.println("VIEW ALL USERS");
+		Helper.line(30, "=");
 		String output = "";
-		output += String.format("%-40s %-39s %-20s %30s\n", "User Name", "Role", "Email", "Password");
-		for (Account a : AccountList) {
-			output += String.format("%-40s %-39s %-20s %30s\n", a.getName(), a.getRole(), a.getEmail(),
-					a.getPassword());
-			System.out.println(output);
+		output += String.format("%-30s %-20s %-20s %20s\n", "User Name", "Role", "Email", "Password");
+		
+		for (int a = 0; a < AccountList.size(); a++) {
+			output += String.format("%-30s %-20s %-20s %20s\n", AccountList.get(a).getName(),  AccountList.get(a).getRole(),  AccountList.get(a).getEmail(),
+					 AccountList.get(a).getPassword());
 		}
+		System.out.println(output);
 	}
 
 	// Cindy Ella
 	public static void AddUser(ArrayList<Account> AccountList) {
+		Helper.line(30, "=");
+		System.out.println("REGISTER");
+		Helper.line(30, "=");
 		String newName = Helper.readString("Enter Name > ");
 		String newRole = Helper.readString("Enter Role > ");
 		String newEmail = Helper.readString("Enter Email > ");
@@ -335,10 +342,13 @@ public class C206_CaseStudy {
 
 	// Cindy Ella
 	public static void DeleteUser(ArrayList<Account> AccountList) {
-		System.out.println("");
+		Helper.line(30, "=");
+		System.out.println("DELETE USER");
+		Helper.line(30, "=");
 		String delUser = Helper.readString("Enter the email of the user you want to delete > ");
-		for (Account ac : AccountList) {
-			if (delUser == ac.getEmail()) {
+		
+		for (int ac = 0; ac < AccountList.size(); ac++) {
+			if (delUser == AccountList.get(ac).getEmail()) {
 				AccountList.remove(ac);
 				System.out.println("User has been successfully deleted!");
 			} else {
@@ -348,10 +358,12 @@ public class C206_CaseStudy {
 
 	}
 
+
 	// Faith
 	public static void AddCategory(ArrayList<Category> CategoryList) {
-		System.out.println("");
+		Helper.line(30, "=");
 		System.out.println("ADD A CATEGORY");
+		Helper.line(30, "=");
 		String newCat = Helper.readString("Enter category name > ");
 
 		for (Category c : CategoryList) {
@@ -365,6 +377,9 @@ public class C206_CaseStudy {
 
 	// Faith
 	public static void ViewAllCategories(ArrayList<Category> CategoryList) {
+		Helper.line(30, "=");
+		System.out.println("VIEW ALL CATEGORIES");
+		Helper.line(30, "=");
 		String output = "";
 		output += String.format("%s", "name");
 		for (int x = 0; x < CategoryList.size(); x++) {
@@ -376,7 +391,9 @@ public class C206_CaseStudy {
 
 	// Faith
 	public static void DeleteCategory(ArrayList<Category> CategoryList) {
-		System.out.println("");
+		Helper.line(30, "=");
+		System.out.println("DELETE CATEGORY");
+		Helper.line(30, "=");
 		String delCategory = Helper.readString("Enter the category you want to delete > ");
 		for (Category c : CategoryList) {
 			if (delCategory == c.getName()) {
@@ -391,6 +408,9 @@ public class C206_CaseStudy {
 
 	// Wei Jing
 	public static void ShowAllBid(ArrayList<bidInfo> BidList) {
+		Helper.line(30, "=");
+		System.out.println("VIEW ALL BIDS");
+		Helper.line(30, "=");
 		String output = "";
 		output += String.format("%-40s %-39s %-20s %30s %40s \n", "Bid ID", "Item Name", "Description", "Seller Email",
 				"Current Bid Price($)", "Starting Date", "Ending Date");
@@ -405,7 +425,9 @@ public class C206_CaseStudy {
 
 	// Wei Jing
 	public static void DeleteBid(ArrayList<bidInfo> BidList) {
-		System.out.println("");
+		Helper.line(30, "=");
+		System.out.println("DELETE A BID");
+		Helper.line(30, "=");
 		int RemoveBid = Helper.readInt("Enter the bid id of the bid you want to delete > ");
 		for (int i = 0; i < BidList.size(); i++) {
 			if (RemoveBid == BidList.get(i).getBidId()) {
@@ -419,7 +441,8 @@ public class C206_CaseStudy {
 
 	// Wei Jing
 	public static void AddBid(ArrayList<bidInfo> BidList) {
-		System.out.println("ADD BID");
+		Helper.line(30, "=");
+		System.out.println("ADD A BID");
 		Helper.line(30, "=");
 		int NewID = BidList.size() + 1;
 		String itemName = Helper.readString("Enter item name >");
@@ -436,6 +459,9 @@ public class C206_CaseStudy {
 
 	// Wei Jing
 	public static void UpdateBid(ArrayList<bidInfo> BidList) {
+		Helper.line(30, "=");
+		System.out.println("UPDATE A BID");
+		Helper.line(30, "=");
 		boolean isAvailable = false;
 		System.out.println("");
 		System.out.println("ADD A BID");
@@ -462,6 +488,9 @@ public class C206_CaseStudy {
 
 	// Jarel
 	public static void ShowAllDeal(ArrayList<DealInfo> DealList) {
+		Helper.line(30, "=");
+		System.out.println("VIEW ALL DEALS");
+		Helper.line(30, "=");
 		String output = "";
 		output += String.format("%-40s %-39s %-20s %30s %40s %25s\n", "Deal ID", "Item Name", "Description",
 				"Seller Email", "Transaction price($)", "Ending Date");
@@ -476,7 +505,9 @@ public class C206_CaseStudy {
 
 	// Jarel
 	public static void DeleteDeal(ArrayList<DealInfo> DealList) {
-		System.out.println("");
+		Helper.line(30, "=");
+		System.out.println("DELETE A DEAL");
+		Helper.line(30, "=");
 		int RemoveDeal = Helper.readInt("Enter the Deal id of the deal you want to delete > ");
 		for (int i = 0; i < DealList.size(); i++) {
 			if (RemoveDeal == DealList.get(i).getDealId()) {
@@ -490,8 +521,9 @@ public class C206_CaseStudy {
 
 	// Jarel
 	public static void AddDeal(ArrayList<DealInfo> DealList) {
-		System.out.println("");
+		Helper.line(30, "=");
 		System.out.println("ADD A DEAL");
+		Helper.line(30, "=");
 		String BuyerEmail = Helper.readString("Enter your email > ");
 		double newBidPrice = Helper.readDouble("Enter Your deal Price >");
 		int DealId = Helper.readInt("Enter the bid ID of the item you want to bid > ");
