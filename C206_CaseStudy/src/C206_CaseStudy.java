@@ -8,37 +8,40 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 
 		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		
+
 		// Wei Jing
 		ArrayList<bidInfo> BidList = new ArrayList<bidInfo>();
 		BidList.add(new bidInfo(1, "Used Shoe", "abc@gmail.com", "cadmusChau@gamil.com", 4.50));
 		BidList.add(new bidInfo(2, "Used socks", "sccc@gmail.com", "DogeKing@gamil.com", 4.50));
-		
-		//Jarel
-		ArrayList<DealInfo> DealList = new ArrayList<DealInfo>();
-		DealList.add(new DealInfo(1, "Used Shoe", "abc@gmail.com", "cadmusChau@gamil.com", 4.50, LocalDate.parse("17/10/2020", formatter1)));
-		DealList.add(new DealInfo(2, "Used socks", "sccc@gmail.com", "DogeKing@gamil.com", 4.50, LocalDate.parse("18/10/2020", formatter1)));
 
-		//Cindy Ella
+		// Jarel
+		ArrayList<DealInfo> DealList = new ArrayList<DealInfo>();
+		DealList.add(new DealInfo(1, "Used Shoe", "abc@gmail.com", "cadmusChau@gamil.com", 4.50,
+				LocalDate.parse("17/10/2020", formatter1)));
+		DealList.add(new DealInfo(2, "Used socks", "sccc@gmail.com", "DogeKing@gamil.com", 4.50,
+				LocalDate.parse("18/10/2020", formatter1)));
+
+		// Cindy Ella
 		ArrayList<Account> AccountList = new ArrayList<Account>();
 		AccountList.add(new Account("Tan ah beng", "admin", "abc123@gmail.com", "123455"));
 		AccountList.add(new Account("Your mum", "student", "abcd1222@gmail.com", "99999"));
-		
-		//Faith
+
+		// Faith
 		ArrayList<Category> CategoryList = new ArrayList<Category>();
-		CategoryList.add(new Category ("Clothes"));
-		CategoryList.add(new Category ("Electronics"));
-		CategoryList.add(new Category ("Kitchen Appliances"));
+		CategoryList.add(new Category("Clothes"));
+		CategoryList.add(new Category("Electronics"));
+		CategoryList.add(new Category("Kitchen Appliances"));
 
-		int optMain = 0; 
-		int option = 0; 
+		int optMain = 0;
+		int option = 0;
 
-		while (option != 3) { 
-			mainMenu();  // Cindy Ella
+		while (option != 3) {
+			mainMenu(); // Cindy Ella
 			optMain = Helper.readInt("Enter an option > ");
 
 			if (optMain == 1) { // Cindy Ella
 				AddUser(AccountList);
+
 			} else if (optMain == 2) {
 
 				loginMenu(); // Wei Jing
@@ -66,29 +69,26 @@ public class C206_CaseStudy {
 							if (option2 == 1) {
 
 							} else if (option2 == 2) {
-								//Faith
-						        ViewAllCategories(CategoryList);
+								// Faith
+								ViewAllCategories(CategoryList);
 
 							} else if (option2 == 3) {
 
 							} else if (option2 == 4) { // Wei Jing
 								ShowAllBid(BidList);
 								AddBid(BidList);
-								
+
 							} else if (option2 == 5) { // Wei Jing
 								ShowAllBid(BidList);
-								
+
 							} else if (option2 == 6) { // Jarel
 								ShowAllDeal(DealList);
-							} 
-							else if(option2 == 7) { // Jarel
+							} else if (option2 == 7) { // Jarel
 								ShowAllDeal(DealList);
 								AddDeal(DealList);
-							}
-							else if (option2 == 8) { 
+							} else if (option2 == 8) {
 								System.out.println("Quit.");
-							}
-							else { 
+							} else {
 								System.out.println("You have enterd an invalid option");
 							}
 						}
@@ -107,9 +107,9 @@ public class C206_CaseStudy {
 					}
 					if (isCorrect == false) { // Wei Jing
 						System.out.println("Either your email or password is invalid");
-					} else { 
+					} else {
 						int option3 = 0;
-						
+
 						while (option3 != 6) { // Wei Jing
 							AdminMenu();
 							option3 = Helper.readInt("Enter an option > ");
@@ -129,17 +129,17 @@ public class C206_CaseStudy {
 								}
 							} else if (option3 == 2) { // Faith
 								CategoryMenu();
-						        int optionCat = Helper.readInt("Enter an option > ");
-						         
-						        if (optionCat == 1) {
-						         AddCategory(CategoryList);
-						        } else if (optionCat == 2) {
-						         ViewAllCategories(CategoryList);
-						        } else if (optionCat == 3) {
-						         DeleteCategory(CategoryList);
-						        } else {
-						         System.out.println("Quit");
-						        }
+								int optionCat = Helper.readInt("Enter an option > ");
+
+								if (optionCat == 1) {
+									AddCategory(CategoryList);
+								} else if (optionCat == 2) {
+									ViewAllCategories(CategoryList);
+								} else if (optionCat == 3) {
+									DeleteCategory(CategoryList);
+								} else {
+									System.out.println("Quit");
+								}
 
 							} else if (option3 == 3) { // Iffah
 
@@ -163,7 +163,7 @@ public class C206_CaseStudy {
 									}
 								}
 
-							} else if (option3 == 5) { //Jarel
+							} else if (option3 == 5) { // Jarel
 								int dealoption = 0;
 								while (dealoption != 4) {
 									DealMenu();
@@ -196,15 +196,14 @@ public class C206_CaseStudy {
 				} else { // Wei Jing
 					System.out.println("Thank you for using the application");
 				}
-			}
-			else if(optMain == 3){ // Wei Jing
+			} else if (optMain == 3) { // Wei Jing
 				System.out.println("Quit.");
-			}
-			else { // Wei Jing
+			} else { // Wei Jing
 				System.out.println("You have enter an invalid option");
 			}
 		}
 	}
+
 	// Cindy Ella
 	public static void mainMenu() {
 		Helper.line(30, "=");
@@ -223,7 +222,7 @@ public class C206_CaseStudy {
 		System.out.println("1. Log In as Student");
 		System.out.println("2. Log in as Administrator");
 	}
-	
+
 	// Wei Jing
 	public static void StudentMenu() {
 		Helper.line(30, "=");
@@ -273,7 +272,7 @@ public class C206_CaseStudy {
 		System.out.println("3. Delete DEAL");
 		System.out.println("4. Quit");
 	}
-	
+
 	// Cindy Ella
 	public static void UserMenu() {
 		Helper.line(30, "=");
@@ -283,20 +282,19 @@ public class C206_CaseStudy {
 		System.out.println("2. Delete User");
 		System.out.println("3. Quit");
 	}
-	
-	//Faith
-	 public static void CategoryMenu() {
-	  Helper.line(30, "=");
-	  System.out.println("MANAGE CATEGORY");
-	  Helper.line(30,"=");
-	  System.out.println("1. Add Categories");
-	  System.out.println("2. View All Categories");
-	  System.out.println("3. Delete Category");
-	  System.out.println("4. Quit");
-	 }
-	
 
-	 // Cindy Ella
+	// Faith
+	public static void CategoryMenu() {
+		Helper.line(30, "=");
+		System.out.println("MANAGE CATEGORY");
+		Helper.line(30, "=");
+		System.out.println("1. Add Categories");
+		System.out.println("2. View All Categories");
+		System.out.println("3. Delete Category");
+		System.out.println("4. Quit");
+	}
+
+	// Cindy Ella
 	public static void ViewAllUsers(ArrayList<Account> AccountList) {
 		System.out.println("");
 		System.out.println("VIEW ALL USERS");
@@ -309,25 +307,33 @@ public class C206_CaseStudy {
 		}
 	}
 
-	 // Cindy Ella
+	// Cindy Ella
 	public static void AddUser(ArrayList<Account> AccountList) {
 		String newName = Helper.readString("Enter Name > ");
 		String newRole = Helper.readString("Enter Role > ");
 		String newEmail = Helper.readString("Enter Email > ");
 		String newPassword = Helper.readString("Enter password > ");
+		boolean userExists = false;
 
-		for (Account a : AccountList) {
-			if(newName != a.getName() && newEmail != a.getEmail()) {
-				AccountList.add(new Account(newName, newRole, newEmail, newPassword));
-				System.out.println("You have sucessfully registered");
+		for (int a = 0; a < AccountList.size(); a++) { 
+			if (!newEmail.equals(AccountList.get(a).getEmail())) {
+				userExists = false;
+			} else {
+				userExists = true;
+				break;
 			}
-			else 
-				System.out.println("Error! User already exist!");
+		}
+		
+		if(userExists == false) {
+			AccountList.add(new Account(newName, newRole, newEmail, newPassword));
+			System.out.println("You have successfully registered!");
+		}else {
+			System.out.println("Error! User already exists!");
 		}
 
 	}
 
-	 // Cindy Ella
+	// Cindy Ella
 	public static void DeleteUser(ArrayList<Account> AccountList) {
 		System.out.println("");
 		String delUser = Helper.readString("Enter the email of the user you want to delete > ");
@@ -341,53 +347,53 @@ public class C206_CaseStudy {
 		}
 
 	}
-	
-	// Faith
-	 public static void AddCategory(ArrayList<Category> CategoryList) {
-	  System.out.println("");
-	  System.out.println("ADD A CATEGORY");
-	  String newCat = Helper.readString("Enter category name > ");
-	   
-	  for (Category c : CategoryList) {
-	  if (newCat != c.getName()) {
-	   CategoryList.add(new Category(newCat));
-	   System.out.println("Category has been successfully added!");
-	  }else
-	   System.out.println("Category already exist");
-	  }
-	 }
-	 
-	 //Faith
-	 public static void ViewAllCategories(ArrayList<Category> CategoryList) {
-	  String output = "";
-	  output += String.format("%s" , "name");
-	  for (int x = 0; x < CategoryList.size(); x++) {
-	   output += String.format("%s", "BidList.get(x).getName()");
-	 
-	  System.out.println(output);
-	  }
-	 }
-	 
-	 // Faith
-	 public static void DeleteCategory(ArrayList<Category> CategoryList) {
-	  System.out.println("");
-	  String delCategory = Helper.readString("Enter the category you want to delete > ");
-	  for (Category c : CategoryList) {
-	   if (delCategory == c.getName()) {
-	    CategoryList.remove(c);
-	    System.out.println("Category has been successfully deleted!");
-	   } else {
-	    System.out.println("Category cannot be deleted!");
-	   }
-	  }
-	 
-	 }
 
-	 // Wei Jing
+	// Faith
+	public static void AddCategory(ArrayList<Category> CategoryList) {
+		System.out.println("");
+		System.out.println("ADD A CATEGORY");
+		String newCat = Helper.readString("Enter category name > ");
+
+		for (Category c : CategoryList) {
+			if (newCat != c.getName()) {
+				CategoryList.add(new Category(newCat));
+				System.out.println("Category has been successfully added!");
+			} else
+				System.out.println("Category already exist");
+		}
+	}
+
+	// Faith
+	public static void ViewAllCategories(ArrayList<Category> CategoryList) {
+		String output = "";
+		output += String.format("%s", "name");
+		for (int x = 0; x < CategoryList.size(); x++) {
+			output += String.format("%s", "BidList.get(x).getName()");
+
+			System.out.println(output);
+		}
+	}
+
+	// Faith
+	public static void DeleteCategory(ArrayList<Category> CategoryList) {
+		System.out.println("");
+		String delCategory = Helper.readString("Enter the category you want to delete > ");
+		for (Category c : CategoryList) {
+			if (delCategory == c.getName()) {
+				CategoryList.remove(c);
+				System.out.println("Category has been successfully deleted!");
+			} else {
+				System.out.println("Category cannot be deleted!");
+			}
+		}
+
+	}
+
+	// Wei Jing
 	public static void ShowAllBid(ArrayList<bidInfo> BidList) {
 		String output = "";
-		output += String.format("%-40s %-39s %-20s %30s %40s \n", "Bid ID", "Item Name", "Description",
-				"Seller Email", "Current Bid Price($)", "Starting Date", "Ending Date");
+		output += String.format("%-40s %-39s %-20s %30s %40s \n", "Bid ID", "Item Name", "Description", "Seller Email",
+				"Current Bid Price($)", "Starting Date", "Ending Date");
 		for (int x = 0; x < BidList.size(); x++) {
 			output += String.format("%-40s %-39s %-20s %30s %40s \n", BidList.get(x).getBidId(),
 					BidList.get(x).getName(), BidList.get(x).getSellerEmail(), BidList.get(x).getBuyerEmail(),
@@ -397,7 +403,7 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 
-	 // Wei Jing
+	// Wei Jing
 	public static void DeleteBid(ArrayList<bidInfo> BidList) {
 		System.out.println("");
 		int RemoveBid = Helper.readInt("Enter the bid id of the bid you want to delete > ");
@@ -410,50 +416,48 @@ public class C206_CaseStudy {
 			}
 		}
 	}
-	
-	 // Wei Jing
+
+	// Wei Jing
 	public static void AddBid(ArrayList<bidInfo> BidList) {
 		System.out.println("ADD BID");
-	    Helper.line(30, "=");
-	    int NewID = BidList.size() + 1;
-	    String itemName = Helper.readString("Enter item name >");
-	    String sellerEmail = Helper.readString("Enter Seller email > ");
-	    String buyerEmail = Helper.readString("Enter buyer email > ");
-	    double bidPrice = Helper.readDouble("Enter Bid price > ");
-	    if(itemName.equals("") || sellerEmail.equals("") || bidPrice == 0) {
-	      System.out.println("You did not enter all the details.");
-	    }
-	    else {
-	      System.out.println("Item successfully added!");
-	      BidList.add(new bidInfo(NewID, itemName, sellerEmail, buyerEmail, bidPrice));      
-	    }	  
-	  }
-	
-	 // Wei Jing
+		Helper.line(30, "=");
+		int NewID = BidList.size() + 1;
+		String itemName = Helper.readString("Enter item name >");
+		String sellerEmail = Helper.readString("Enter Seller email > ");
+		String buyerEmail = Helper.readString("Enter buyer email > ");
+		double bidPrice = Helper.readDouble("Enter Bid price > ");
+		if (itemName.equals("") || sellerEmail.equals("") || bidPrice == 0) {
+			System.out.println("You did not enter all the details.");
+		} else {
+			System.out.println("Item successfully added!");
+			BidList.add(new bidInfo(NewID, itemName, sellerEmail, buyerEmail, bidPrice));
+		}
+	}
+
+	// Wei Jing
 	public static void UpdateBid(ArrayList<bidInfo> BidList) {
 		boolean isAvailable = false;
-	    System.out.println("");
-	    System.out.println("ADD A BID");
-	    System.out.println("=");
-	    int bidId = Helper.readInt("Enter the bid ID of the item you want to bid > ");  
-	    for(int i =0; i < BidList.size(); i++) {
-	      if(bidId == BidList.get(i).getBidId()) {
-	        isAvailable = true;
-	        String BuyerEmail = Helper.readString("Enter your email > ");
-	        double newBidPrice = Helper.readDouble("Enter Your Bid Price > $");
-	        if(BidList.get(i).getBidPrice() < newBidPrice) {
-	          System.out.println("You have successfully bid the item!");
-	          BidList.get(i).setBuyerEmail(BuyerEmail);
-	          BidList.get(i).setNewBidPrice(newBidPrice);
-	        }
-	        else {
-	          System.out.println("Your bid price is lower than current bid price");
-	        }      
-	      }
-	    }  
-	    if(isAvailable == false) {
-	      System.out.println("Bid id does not exist");
-	    }
+		System.out.println("");
+		System.out.println("ADD A BID");
+		System.out.println("=");
+		int bidId = Helper.readInt("Enter the bid ID of the item you want to bid > ");
+		for (int i = 0; i < BidList.size(); i++) {
+			if (bidId == BidList.get(i).getBidId()) {
+				isAvailable = true;
+				String BuyerEmail = Helper.readString("Enter your email > ");
+				double newBidPrice = Helper.readDouble("Enter Your Bid Price > $");
+				if (BidList.get(i).getBidPrice() < newBidPrice) {
+					System.out.println("You have successfully bid the item!");
+					BidList.get(i).setBuyerEmail(BuyerEmail);
+					BidList.get(i).setNewBidPrice(newBidPrice);
+				} else {
+					System.out.println("Your bid price is lower than current bid price");
+				}
+			}
+		}
+		if (isAvailable == false) {
+			System.out.println("Bid id does not exist");
+		}
 	}
 
 	// Jarel
@@ -504,17 +508,5 @@ public class C206_CaseStudy {
 			}
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 
 }
