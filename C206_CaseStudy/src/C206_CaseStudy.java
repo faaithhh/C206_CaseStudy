@@ -95,8 +95,10 @@ public class C206_CaseStudy {
 							} else if (option2 == 7) { // Jarel
 								ShowAllDeal(DealList);
 								AddDeal(DealList);
-								
 							} else if (option2 == 8) {
+								ShowAllBid(BidList);
+								UpdateBid(BidList);
+							} else if (option2 == 9) {
 								System.out.println("Quit.");
 							} else {
 								System.out.println("You have enterd an invalid option");
@@ -181,7 +183,10 @@ public class C206_CaseStudy {
 									} else if (bidOption == 3) {
 										ShowAllBid(BidList);
 										DeleteBid(BidList);
-									} else if (bidOption == 4) {
+									} else if(bidOption == 4) {
+										ShowAllBid(BidList);
+										UpdateBid(BidList);
+									} else if (bidOption == 5) {
 										System.out.println("QUIT.");
 									} else {
 										System.out.println("You have enter an invalid option");
@@ -262,7 +267,8 @@ public class C206_CaseStudy {
 		System.out.println("5. View all bids");
 		System.out.println("6. View all deal");
 		System.out.println("7. Add Deal");
-		System.out.println("8. Quit");
+		System.out.println("8. Update Bid");
+		System.out.println("9. Quit");
 	}
 
 	// Wei Jing
@@ -286,7 +292,8 @@ public class C206_CaseStudy {
 		System.out.println("1. Show all bids");
 		System.out.println("2. Add bid");
 		System.out.println("3. Delete bid");
-		System.out.println("4. Quit");
+		System.out.println("4. Update bid");
+		System.out.println("5. Quit");
 	}
 
 	// Jarel
